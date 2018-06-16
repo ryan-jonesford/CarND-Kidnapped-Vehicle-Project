@@ -7,7 +7,12 @@ add_definitions(-std=c++11)
 set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS "${CXX_FLAGS}")
 
-set(sources src/particle_filter.cpp src/main.cpp)
+file(GLOB source_files
+    "src/Inc/*.h"
+    "src/*.cpp"
+)
+
+set(sources ${source_files})
 
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
